@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Dashboard;
 use App\Http\Middleware\Authenticate;
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
@@ -25,6 +26,7 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            // ->path('admin')
             ->id('admin')
             ->login(Login::class)
             ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
@@ -33,6 +35,11 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
+            ->plugins([
+                FilamentShieldPlugin::make(),
+                SpatieLaravelTranslatablePlugin::make()->defaultLocales(['ja','en', 'es', 'nl']),
+            ]
+            )
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
@@ -44,6 +51,8 @@ class AdminPanelProvider extends PanelProvider
             ->navigationGroups([
                 'Shop',
                 'Blog',
+                'Shield',
+                // 'Settings',
             ])
             ->databaseNotifications()
             ->middleware([
@@ -60,9 +69,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->plugin(
-                SpatieLaravelTranslatablePlugin::make()
-                    ->defaultLocales(['en', 'es', 'nl']),
-            );
+            ;
+
     }
 }

@@ -4,6 +4,7 @@ namespace App\Filament\Clusters\Products\Resources;
 
 use App\Filament\Clusters\Products;
 use App\Models\Shop\Brand;
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
@@ -12,7 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-class BrandResource extends Resource
+class BrandResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Brand::class;
 
@@ -129,6 +130,26 @@ class BrandResource extends Resource
             'index' => \App\Filament\Clusters\Products\Resources\BrandResource\Pages\ListBrands::route('/'),
             'create' => \App\Filament\Clusters\Products\Resources\BrandResource\Pages\CreateBrand::route('/create'),
             'edit' => \App\Filament\Clusters\Products\Resources\BrandResource\Pages\EditBrand::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            // 'import',
+            'export',
+            'create',
+            'update',
+            'restore',
+            'restore_any',
+            'replicate',
+            'reorder',
+            'delete',
+            'delete_any',
+            'force_delete',
+            'force_delete_any',
         ];
     }
 }

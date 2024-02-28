@@ -4,6 +4,7 @@ namespace App\Filament\Clusters\Products\Resources;
 
 use App\Filament\Clusters\Products;
 use App\Models\Shop\Category;
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
@@ -13,7 +14,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
-class CategoryResource extends Resource
+class CategoryResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Category::class;
 
@@ -129,6 +130,26 @@ class CategoryResource extends Resource
             'index' => \App\Filament\Clusters\Products\Resources\CategoryResource\Pages\ListCategories::route('/'),
             'create' => \App\Filament\Clusters\Products\Resources\CategoryResource\Pages\CreateCategory::route('/create'),
             'edit' => \App\Filament\Clusters\Products\Resources\CategoryResource\Pages\EditCategory::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            'import',
+            // 'export',
+            'create',
+            'update',
+            'restore',
+            'restore_any',
+            'replicate',
+            'reorder',
+            'delete',
+            'delete_any',
+            'force_delete',
+            'force_delete_any',
         ];
     }
 }

@@ -127,6 +127,10 @@ class DatabaseSeeder extends Seeder
             ->count(20)
             ->create());
         $this->command->info('Blog links created.');
+
+        #shield
+        $this->command->warn(PHP_EOL . 'Creating roles and permissions...');
+
     }
 
     protected function withProgressBar(int $amount, Closure $createCollectionOfOne): Collection

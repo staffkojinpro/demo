@@ -19,9 +19,9 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
 {
     use HasApiTokens;
     use HasFactory;
-    use Notifiable;
-    use HasRoles;
     use HasPanelShield;
+    use HasRoles;
+    use Notifiable;
 
     /**
      * @var array<int, string>

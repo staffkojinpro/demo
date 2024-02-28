@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\Shield;
 
+use App\Filament\Resources\Shield\RoleResource\Pages;
 use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use BezhanSalleh\FilamentShield\Facades\FilamentShield;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
-use App\Filament\Resources\Shield\RoleResource\Pages;
 use BezhanSalleh\FilamentShield\Support\Utils;
 use Filament\Forms;
 use Filament\Forms\Components\Component;
@@ -320,7 +320,7 @@ class RoleResource extends Resource implements HasShieldPermissions
             ->visible(fn (): bool => (bool) Utils::isPageEntityEnabled() && $count > 0)
             ->badge($count)
             ->schema([
-                static::getCheckboxListFormComponent('pages_tab', $options)
+                static::getCheckboxListFormComponent('pages_tab', $options),
             ]);
     }
 
@@ -333,7 +333,7 @@ class RoleResource extends Resource implements HasShieldPermissions
             ->visible(fn (): bool => (bool) Utils::isWidgetEntityEnabled() && $count > 0)
             ->badge($count)
             ->schema([
-                static::getCheckboxListFormComponent('widgets_tab', $options)
+                static::getCheckboxListFormComponent('widgets_tab', $options),
             ]);
     }
 

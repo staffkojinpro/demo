@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
             ->create());
         $this->command->info('Blog links created.');
 
-        #shield
+        //shield
         $this->command->warn(PHP_EOL . 'Creating roles and permissions...');
 
     }

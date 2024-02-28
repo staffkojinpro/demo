@@ -140,6 +140,4 @@ class CategoryResource extends Resource implements HasShieldPermissions
             'force_delete_any',
         ];
     }
-
-
 }

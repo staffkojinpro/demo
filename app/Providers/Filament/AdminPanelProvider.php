@@ -35,10 +35,11 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
-            ->plugins([
-                FilamentShieldPlugin::make(),
-                SpatieLaravelTranslatablePlugin::make()->defaultLocales(['ja','en', 'es', 'nl']),
-            ]
+            ->plugins(
+                [
+                    FilamentShieldPlugin::make(),
+                    SpatieLaravelTranslatablePlugin::make()->defaultLocales(['ja', 'en', 'es', 'nl']),
+                ]
             )
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -68,8 +69,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])
-            ;
+            ]);
 
     }
 }

@@ -1,7 +1,8 @@
 <?php
+
 return [
 
-    'resource'=>[
+    'resource' => [
         'single' => 'Schedule',
         'plural' => 'Schedules',
         'navigation' => 'Settings',
@@ -32,7 +33,7 @@ return [
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
         'never' => 'Never',
-        'environments' => 'Environments'
+        'environments' => 'Environments',
     ],
     'messages' => [
         'no-records-found' => 'No records found.',
@@ -47,7 +48,7 @@ return [
         'help-type' => 'Multiple :type can be specified separated by commas',
         'attention-type-function' => "ATTENTION: parameters of the type 'function' are executed before the execution of the scheduling and its return is passed as parameter. Use with care, it can break your job",
         'delete_cronjob' => 'Delete cronjob',
-        'delete_cronjob_confirm' => 'Do you really want to delete the cronjob ":cronjob"?'
+        'delete_cronjob_confirm' => 'Do you really want to delete the cronjob ":cronjob"?',
     ],
     'status' => [
         'active' => 'Active',
@@ -62,6 +63,6 @@ return [
     ],
     'validation' => [
         'cron' => 'The field must be filled in the cron expression format.',
-        'regex' => __('validation.alpha_dash') . ' ' . 'Comma is also allowed.'
-    ]
+        'regex' => __('validation.alpha_dash') . ' ' . 'Comma is also allowed.',
+    ],
 ];

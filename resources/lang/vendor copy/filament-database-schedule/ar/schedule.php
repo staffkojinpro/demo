@@ -1,9 +1,8 @@
 <?php
 
-
 return [
 
-    'resource'=>[
+    'resource' => [
         'single' => 'مهمة نظام مجدولة',
         'plural' => 'مهام النظام المجدولة',
         'navigation' => 'الإعدادات',
@@ -62,8 +61,7 @@ return [
     ],
     'validation' => [
         'cron' => 'يجب ملء الحقل بتنسيق تعبير التكرار.',
-        'regex' => __('validation.alpha_dash') . ' ' . 'الفاصلة مسموح بها أيضًا.'
+        'regex' => __('validation.alpha_dash') . ' ' . 'الفاصلة مسموح بها أيضًا.',
     ],
-
 
 ];

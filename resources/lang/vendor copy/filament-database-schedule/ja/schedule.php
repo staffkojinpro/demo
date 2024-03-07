@@ -1,7 +1,8 @@
 <?php
+
 return [
 
-    'resource'=>[
+    'resource' => [
         'single' => 'スケジュール',
         'plural' => 'スケジュール一覧',
         'navigation' => '設定',
@@ -45,7 +46,7 @@ return [
         'help-cron-expression' => '必要に応じて、ここをクリックし、cron 式の作成を容易にするツールを使用してください。',
         'help-log-filename' => 'ログファイルが設定されている場合、この cron からのログ メッセージは storage/logs/<ログ ファイル名>.log に書き込まれます。',
         'help-type' => ':type の場合、はコンマ区切りで複数指定できます。',
-        'attention-type-function' => "注意: タイプ「関数」のパラメータは、スケジューリングの実行前に実行され、その戻り値がパラメータとして渡されます。仕事に支障をきたす可能性があるため、注意して使用してください",
+        'attention-type-function' => '注意: タイプ「関数」のパラメータは、スケジューリングの実行前に実行され、その戻り値がパラメータとして渡されます。仕事に支障をきたす可能性があるため、注意して使用してください',
         'delete_cronjob' => 'Cronjobを削除する',
         'delete_cronjob_confirm' => '":cronjob"のCronjobを削除してもよろしいですか？',
     ],
@@ -63,5 +64,5 @@ return [
     'validation' => [
         'cron' => 'Cronの式が正しくありません。',
         'regex' => __('validation.alpha_dash') . ' ' . 'アンダースコア(_)とハイフン(-)のみ使用できます。',
-    ]
+    ],
 ];

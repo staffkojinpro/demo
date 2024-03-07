@@ -413,6 +413,6 @@ return [
 
     ],
 
-    'validation.unique'=> 'ユニーク',
+    'validation.unique' => 'ユニーク',
 
 ];

@@ -1,7 +1,8 @@
 <?php
+
 return [
 
-    'resource'=>[
+    'resource' => [
         'single' => 'Agendamento',
         'plural' => 'Agendamentos',
         'navigation' => 'Configurações',

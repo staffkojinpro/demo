@@ -1,0 +1,32 @@
+<?php
+
+return [
+    'true' => '有効',
+    'false' => '無効',
+    'set' => '適用',
+    'not_set' => '未適用',
+    'equal' => '等しい',
+    'not_equal' => '等しくない',
+    'on_after' => '以降',
+    'on_before' => '以前',
+    'greater_equal' => '以上',
+    'less_equal' => '以下',
+    'greater_than' => 'より大きい',
+    'less_than' => 'より小さい',
+    'between' => 'の間',
+    'start_with' => 'で始まる',
+    'not_start_with' => 'で始まらない',
+    'end_with' => 'で終わる',
+    'not_end_with' => 'で終わらない',
+    'contain' => 'を含む',
+    'not_contain' => 'を含まない',
+
+    'from' => 'から',
+    'until' => 'まで',
+    'days' => '日',
+    'weeks' => '週間',
+    'months' => 'ヶ月',
+    'years' => '年',
+    'from_now' => '現在から',
+    'ago' => '前',
+];
